@@ -1,0 +1,7 @@
+function myFirstfunction(){
+	return 'firstjs';
+}
+
+
+
+

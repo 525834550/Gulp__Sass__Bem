@@ -1,0 +1,1 @@
+function myFirstfunction(){return"firstjs"}

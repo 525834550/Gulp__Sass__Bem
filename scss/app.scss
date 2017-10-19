@@ -1,0 +1,93 @@
+$body-color:#b72020;
+$bg-color:#2c3e50;
+$hover-color:#16a085;
+$text-color:#ffffff;
+
+@import 'profile';
+
+
+body{
+	color: $bg-color;
+	.header{
+		background-color:#232938;
+	}
+	h1{
+	font-family:arial;
+	text-align: center;
+	display: inline;
+    margin: 0 35%;
+    color:#fff;
+	}	
+}
+
+@mixin e($element)	{
+	&__#{$element}{
+		@content;
+	}
+}
+
+@mixin m($modifier){
+	&--#{$modifier}{
+		@content;
+	}
+}
+
+nav{
+	.inline-list{
+	list-style:none;
+	background:$bg-color;
+	margin:0;
+	padding:0;
+		@include e('item'){		
+			display:inline-block;
+		    border-right: 1px solid #fff;
+			a{
+				text-decoration: none;
+				color:$text-color;
+				display:inline-block;
+				padding:10px 16px;
+			}
+			a:hover{
+				background:$hover-color;
+			}
+			@include m('end'){
+				border-right:none;
+			}
+		}
+		
+	}
+
+}
+
+
+@mixin border-radius($radius){
+	-webkit-border-radius:$radius;
+	-moz-border-radius:$radius;
+	-ms-border-radius:$radius;
+	border-radius:$radius;
+}
+
+
+.panel{
+	border:3px solid #2c3e50;
+	background:#eee571;
+	margin:10px;
+}
+
+#LittlePanel{
+	@extend .panel;
+	@include border-radius(15px);
+	font-size:12px;
+	padding:10px;
+}
+
+#BigPanel{
+	@extend .panel;
+	@include border-radius(20px);
+	font-size:32px;
+	padding:20px;
+}
+
+.banner-image__img{
+	width:100%;
+}
